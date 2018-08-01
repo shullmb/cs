@@ -27,14 +27,14 @@ function mergeSort(arr) {
     }
     let middle = Math.ceil(arr.length / 2)
     // console.log('recurse', arr)
-    topHalf = arr.slice(middle,arr.length);
-    bottomHalf = arr.slice(0,middle);
+    let topHalf = arr.slice(middle,arr.length);
+    let bottomHalf = arr.slice(0,middle);
     console.log(topHalf, bottomHalf)
-    sortedTopHalf = mergeSort(topHalf)
-    sortedBottomHalf = mergeSort(bottomHalf)
+    let sortedTopHalf = mergeSort(topHalf)
+    let sortedBottomHalf = mergeSort(bottomHalf)
     
     return merge(sortedBottomHalf, sortedTopHalf)
 }
     
-mergeSort(arr);
+console.log(mergeSort(arr));
 
