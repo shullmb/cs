@@ -46,3 +46,4 @@ function radixSort(arr, base = 10) {
 // console.log(digit)
 
 console.log(radixSort(data));
+console.log(data.sort((a,b) => a - b ));

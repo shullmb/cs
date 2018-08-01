@@ -33,9 +33,9 @@ def radix_sort(arr, base=10):
 # print(get_digit(-123,2))
 # print(len(data))
 
-print('py sort', sorted(data))
 print('  radix', radix_sort(data))
-radix_sort(data)
+print('py sort', sorted(data))
+# radix_sort(data)
 
 # data = [0,5,-100,-1000,75,3,44,3490,23,4,435,123,49,403,2498]
 # print('py sort', sorted(data))
