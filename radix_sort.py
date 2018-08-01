@@ -16,18 +16,18 @@ def radix_sort(arr, base=10):
 
     for i in range(max_digits):
         buckets = [[] for bucket in range(base)]
-        for j in range(len(arr)):
-            digit = get_digit(arr[j], i + 1)
-            buckets[digit].append(arr[j])
-            # print(buckets)
-        
         index = 0
-        for n in range(len(buckets)):
-            if buckets[n]:
-                for j in range(len(buckets[n])):
-                    arr[index] = buckets[n][j]
+        for num in arr:
+            digit = get_digit(num, i + 1)
+            buckets[digit].append(num)
+            print(buckets)
+        
+        for bucket in buckets:
+            if bucket:
+                for j in range(len(bucket)):
+                    arr[index] = bucket[j]
                     index += 1
-                    # print('Sorting',arr)
+                    print('Sorting',arr)
     return arr
             
 # print(get_digit(-123,2))
@@ -35,8 +35,8 @@ def radix_sort(arr, base=10):
 
 print('py sort', sorted(data))
 print('  radix', radix_sort(data))
+radix_sort(data)
 
-data = [0,5,-100,-1000,75,3,44,3490,23,4,435,123,49,403,2498]
-print('py sort', sorted(data))
-print('  radix', radix_sort(data))
-
+# data = [0,5,-100,-1000,75,3,44,3490,23,4,435,123,49,403,2498]
+# print('py sort', sorted(data))
+# print('  radix', radix_sort(data))
