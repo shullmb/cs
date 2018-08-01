@@ -35,4 +35,4 @@ def heap_sort(arr):
 
 
 print(heap_sort(data))
-print(heap_sort(big_data))
+# print(heap_sort(big_data))
