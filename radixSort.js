@@ -1,4 +1,4 @@
-var data = data = [0, 5, 100, 1000, 75, 3, 44, 3490, 23, 4, 435, 123, 49, 403, 2498]
+var data = [0, 5, 100, 1000, 75, 3, 44, 3490, 23, 4, 435, 123, 49, 403, 2498]
 
 function getDigit(num, place, base = 10) {
 	let value = 0
@@ -13,7 +13,7 @@ function getDigit(num, place, base = 10) {
 function radixSort(arr, base = 10) {
 	let maxDigits = Math.floor(Math.log10(Math.max(...arr))) + 1
 
-	for ( let num = 0; num < maxDigits; num++) {
+	for ( let num = 1; num <= maxDigits; num++) {
 		// make buckets
 		let buckets = [];
 		let index = 0
@@ -24,7 +24,7 @@ function radixSort(arr, base = 10) {
 		// iterate over array
 		arr.forEach( number => {
 			// get digit in the 1s,10s,100s, etc place
-			let digit = getDigit(number, num + 1)
+			let digit = getDigit(number, num)
 			// push number into appropriate bucket
 			buckets[digit].push(number)
 		})
