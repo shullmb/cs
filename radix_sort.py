@@ -22,7 +22,7 @@ def radix_sort(arr, base=10):
             # print(buckets)
         
         index = 0
-        for n in range(len(buckets) - 1):
+        for n in range(len(buckets)):
             if buckets[n]:
                 for j in range(len(buckets[n])):
                     arr[index] = buckets[n][j]
