@@ -18,7 +18,7 @@ def radix_sort(arr, base=10):
         buckets = [[] for bucket in range(base)]
         index = 0
         for num in arr:
-            digit = get_digit(num, i + 1)
+            digit = get_digit(num, i + 1, base)
             buckets[digit].append(num)
             print(buckets)
         
