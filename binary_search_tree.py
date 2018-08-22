@@ -44,10 +44,10 @@ class BinarySearchTree:
         if node:
             arr = []
             if node.left_child:
-                arr.append(**dict(self.in_order_feed(node.left_child)))
+                arr.append(**self.in_order_feed(node.left_child))
             arr.append(node.data)
             if node.right_child:
-                arr.append(**dict(self.in_order_feed(node.right_child)))
+                arr.append(**self.in_order_feed(node.right_child))
             return arr
 
     def empty_tree(self, node):
