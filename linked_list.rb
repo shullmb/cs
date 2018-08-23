@@ -1,8 +1,9 @@
 class Node
-  attr_accessor(:data, :next_node)
-  def initialize(data)
+  attr_accessor :data, :next_node
+
+  def initialize(data, next_node = nil)
     @data = data
-    @next_node = nil
+    @next_node = next_node
   end
 end
 
@@ -18,7 +19,7 @@ class LinkedList
       @head = node
     else
       current = @head
-      while current != nil
+      while current.next_node != nil do
         current = current.next_node
       end
       current.next_node = node
@@ -35,7 +36,7 @@ class LinkedList
       current.next_node = nil
       @head = temp_node
     else
-      while current.next_node != nil
+      while current.next_node != nil do
         previous = current
         current = current.next_node
         if current.data == data
@@ -53,7 +54,7 @@ class LinkedList
     if @head != nil
       current = @head
       puts @head.data
-      while current.next_node != nil
+      while current.next_node != nil do
         current = current.next_node
         puts current.data
       end
@@ -65,4 +66,10 @@ end
 list = LinkedList.new
 
 list.add("one")
-list.print_list();
+list.add("two")
+list.add("three")
+list.add("four")
+list.print_list
+
+list.delete_where_data_equals('three')
+list.print_list
