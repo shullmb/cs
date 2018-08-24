@@ -38,6 +38,18 @@ class LinkedList
     end
   end
 
+  def delete_at_index(n)
+    index = 0
+    if @head == nil
+      return false
+    else
+      current = @head
+      while index < n do
+        
+      end
+    end
+  end
+
   def delete_where_data_equals(data)
     if @head == nil
       return false
