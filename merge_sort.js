@@ -26,7 +26,6 @@ function mergeSort(arr) {
         return arr
     }
     let middle = Math.ceil(arr.length / 2)
-    // console.log('recurse', arr)
     let topHalf = arr.slice(middle,arr.length);
     let bottomHalf = arr.slice(0,middle);
     console.log(topHalf, bottomHalf)

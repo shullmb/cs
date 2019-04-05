@@ -14,5 +14,14 @@ class BinarySearchTree
     @root = nil
   end
 
-  
+  def insert node, data
+    if !@root
+      @root = TreeNode.new(data)
+      return node
+    else
+      if data < node.data && !node.left_child
+    end
+  end
+
 end
+
