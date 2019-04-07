@@ -1,8 +1,9 @@
 type ListNode<T> = LLNode<T> | null;
 
 export class LLNode<T> {
-  constructor(private _data: T, public next: ListNode<T> = null) {
-  }
+  constructor(
+    private _data: T,
+    public next: ListNode<T> = null) { }
 
   get data(): T {
     return this._data
@@ -17,25 +18,41 @@ export class LinkedList<T> {
   constructor(
     private head: ListNode<T> = null,
     private tail: ListNode<T> = null,
-    public length: number = 0) {
+    public length: number = 0) { }
 
-  }
-
-  add(data): void {
+  add(data: T): void {
     let node = new LLNode<T>(data)
     if (this.head === null) {
       this.head = node
     } else {
-      // let current = this.head
-      // while (current.next) {
-      //   current = current.next
-      // }
-      // [current.next, this.tail] = [node, node]
       let current = this.tail
       current.next = node
     }
     this.tail = node
     this.length++
+  }
+
+  insert(index: number, data: T): void {
+    if (index >= this.length) {
+      this.add(data)
+    } else {
+      let node = new LLNode<T>(data)
+      let current = this.head
+      if (index === 0) {
+        node.next = current
+        this.head = node
+      } else {
+        let currentIndex = 0;
+        while (currentIndex < index - 1) {
+          current = current.next
+          currentIndex++
+        }
+        console.log("CURRENT", current)
+        node.next = current.next
+        current.next = node
+      }
+      this.length++
+    }
   }
 
   delete<T>(deleteIndex: number): T {
@@ -74,14 +91,6 @@ export class LinkedList<T> {
       console.log('popping')
       return null
     }
-  }
-
-  pop<T>(): T {
-    return this.delete(this.length - 1)
-  }
-
-  shift<T>(): T {
-    return this.delete(0)
   }
 
   print(): void {
