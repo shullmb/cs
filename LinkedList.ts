@@ -47,7 +47,6 @@ export class LinkedList<T> {
           current = current.next
           currentIndex++
         }
-        console.log("CURRENT", current)
         node.next = current.next
         current.next = node
       }
@@ -65,7 +64,6 @@ export class LinkedList<T> {
           this.head = this.head.next
           return result
         } else {
-          console.log('firing')
           this.head = null
           this.tail = null
           return result
@@ -88,7 +86,6 @@ export class LinkedList<T> {
         return result
       }
     } else {
-      console.log('popping')
       return null
     }
   }
